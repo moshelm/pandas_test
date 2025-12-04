@@ -53,5 +53,5 @@ def create_column_delivery_status(df:DataFrame,new_column):
     df[new_column] = df.apply(lambda row: 'delayed' if row.shipping_days > 7 else 'on time',axis=1)
 
 def create_csv(df:DataFrame):
-    df.to_csv('clean_order[322534348].csv')
+    df.to_csv('clean_order322534348.csv')
 
