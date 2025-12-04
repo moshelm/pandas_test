@@ -12,3 +12,9 @@ if __name__=='__main__':
 
     create_column_high_value_order(df,'total_amount','high_value_order')
     df = sort_data_frame(df,'total_amount',asc=False)
+    create_column_rating_by_country(df,'rating','country')
+    # level 6
+    # print(df['rating_by_country'])
+    # level 7
+    df = filter_by_rating_amount(df, 'total_amount', 'rating')
+

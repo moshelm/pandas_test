@@ -36,3 +36,14 @@ def create_column_high_value_order(df:DataFrame,base_column,new_column):
 def sort_data_frame(df:DataFrame, sort_column:str,asc=True) -> DataFrame:
     return df.sort_values(sort_column,ascending=asc)
 
+
+# level 6
+
+def create_column_rating_by_country(df:DataFrame, rating, country):
+
+    df['rating_by_country'] = df.groupby([country])[rating].mean()
+
+# level 7
+
+def filter_by_rating_amount(df:DataFrame, total_amount, rating):
+   return df.query(f'{total_amount} > 1000 and {rating} >4.5')
