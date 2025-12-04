@@ -26,3 +26,13 @@ def create_column_order_month(df:DataFrame, date_column,new_column):
     df[new_column] = pd.to_datetime(df['date']).dt.month
     df = df.drop('date',axis=1)
     return df
+
+# level 5
+
+def create_column_high_value_order(df:DataFrame,base_column,new_column):
+    avg_total_amount = df[base_column].mean()
+    df[new_column] = df.apply(lambda row: True if row.total_amount > avg_total_amount else False,axis=1)
+
+def sort_data_frame(df:DataFrame, sort_column:str,asc=True) -> DataFrame:
+    return df.sort_values(sort_column,ascending=asc)
+
